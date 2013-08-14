@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!-- saved from url=(0052)http://adif.org/304/ADIF_304_Resources_annotated.htm -->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  
+  <title>ADIF 3.0.4 Resources Document (annotated)</title>
+
+  <style type="text/css">
+    body
+    {
+      font-family: arial, tahoma, verdana, sans-serif;
+      font-size: medium;
+    }
+    
+    .versiontitle
+    {
+      color: #0000ff;
+    }
+    
+    .deletion,
+    .deletion a:visited,
+    .deletion a:link
+    {
+      color: #ff0000;
+      font-weight: bold;
+    }
+    
+    .deletionstrike,
+    .deletionstrike a:visited,
+    .deletionstrike a:link
+    {
+      color: #ff0000;
+      font-weight: bold;
+      text-decoration:line-through;
+    }    
+    
+    .addition,
+    .addition a:visited,
+    .addition a:link
+    {
+      color: #008000;
+      font-weight: bold;
+    }
+    
+    ol.contents li
+    {
+      padding-bottom: 1em;
+    }
+    
+    ol.contents li:first-child
+    {
+      padding-top: 1em;
+      padding-bottom: 1em;
+    }
+
+    .example,
+    blockquote
+    {
+      font-family: "Courier New", Courier, monospace;
+    }
+    
+    .exampletable
+    {
+      padding-left: 2em;
+    }
+    
+    .exampletable td
+    {
+      padding-right: 1em;
+    }
+    
+    h3
+    {
+      padding-top: 1em;
+    }
+  </style>
+    
+</head>
+
+<body>
+
+<p class="versiontitle">(ADIF 3.0.4 Resources, updated 2013/08/04, annotated with changes from the previous release's ADX Schema document:
+<span class="addition">green</span>
+for additions, and
+<span class="deletion">red</span>
+for deletions)</p>
+
+<h1><span class="addition">Resources for Version 3.0.4 of the Amateur Data Interchange Format (ADIF) Specification</span><span class="deletionstrike">ADX XML Schemas for Amateur Data Interchange Format (ADIF)</span></h1>
+
+
+<h2>Table of Contents</h2>
+<ol class="contents" style="list-style-type: upper-roman">
+  <li><a href="http://adif.org/304/ADIF_304_Resources_annotated.htm#Introduction">Introduction</a></li>
+  <li><a href="http://adif.org/304/ADIF_304_Resources_annotated.htm#ADXSchemas">ADX Schemas</a>
+    <ol style="list-style-type: upper-alpha">
+      <li><a href="http://adif.org/304/ADIF_304_Resources_annotated.htm#ADXSchemasChecksNotRequired">Checks not Required</a></li>
+      <li><a href="http://adif.org/304/ADIF_304_Resources_annotated.htm#ADXSchemasLimitations">Limitations</a></li>
+    </ol>
+  </li>
+  <li class="addition"><a href="http://adif.org/304/ADIF_304_Resources_annotated.htm#ADIFImplementationNotes">ADIF Implementation Notes</a>
+    <ol style="list-style-type: upper-alpha">
+      <li><a href="http://adif.org/304/ADIF_304_Resources_annotated.htm#ADIFImplementationNotesNumberDataType">Number Data Type</a></li>
+      <li><a href="http://adif.org/304/ADIF_304_Resources_annotated.htm#ADIFImplementationNotesADIDataLengthSpecifier">ADI Data Length Specifier</a></li>
+      <li><a href="http://adif.org/304/ADIF_304_Resources_annotated.htm#ADIFImplementationNotesMinimumFields">Minimum Fields</a></li>
+    </ol>
+  </li>
+</ol>
+
+<hr>
+
+<h2 class="addition" id="Introduction">I. Introduction</h2>
+<div class="addition">This document gives details of resources that supplement the Amateur Data Interchange Format (ADIF) Specification.<br>
+<br>
+The resources are version-specific.</div>
+
+<hr>
+
+
+<h2 class="addition" id="ADXSchemas">II. ADX Schemas</h2>
+<p>ADIF 3.0.2 introduced ADX as an alternative file format for representing
+  ADIF employing XML syntax.&nbsp;
+  The ADX XML Schemas supplement this, describing
+  ADX using the <a href="http://www.w3.org/TR/xmlschema-1/">XML Schema</a> definition language 1.0</p>
+<p>
+  The ADX schemas can be used to determine whether ADX complies with the ADIF specification.&nbsp;
+  If used, they must be applied externally without being referenced in the <span class="example">&lt;ADX&gt;</span> root element.</p>
+<p>
+  Most aspects of the ADIF specification are validated, subject to
+  some checks that cannot be performed due to being advisory only and others which
+  are not possible or impractical to check.</p>
+<p>
+  Two schemas are provided<span class="deletionstrike">.<span class="addition">:</span>&nbsp;
+  One is specific to ADX 3.0.3 and provides the most accurate representation because it
+  disallows deprecated features.&nbsp;
+  A second, non-version specific schema is also provided for situations where the ADX version is not known in advance.</span>
+</p>
+<p class="deletionstrike">
+  The version-specific schema adx303.xsd is available
+  <a href="http://groups.yahoo.com/group/adifdev/files/adx303.xsd">here</a>.<br>
+  The non-version-specific schema adx303generic.xsd is available
+  <a href="http://groups.yahoo.com/group/adifdev/files/adx303generic.xsd">here</a>.
+</p>
+<ul class="addition">
+  <li><a href="http://adif.org/304/adx304.xsd">adx304.xsd</a> is specific to ADX 3.0.4 and disallows deprecated features.<br>
+  Expected use is when exporting ADIF as ADX 3.0.4<br>
+  &nbsp;</li>
+  <li><a href="http://adif.org/304/adx304generic.xsd">adx304generic</a> is not version-specific and includes deprecated features.&nbsp;
+  It is provided for situations where the ADX version is not known in advance and could be ADX 3.0.4 or earlier.<br>
+  Expected use is when importing ADIF as ADX.</li>
+</ul>
+
+
+<h3 id="ADXSchemasChecksNotRequired">II.A. Checks not Required</h3>
+<ul>
+  <li>CONTEST_ID element contents are not validated against the "Contest ID" enumeration because the ADIF
+      field type is "String" (i.e. the enumeration is <span class="deletionstrike">only</span> advisory).</li>
+  <li>CNTY and MY_CNTY element contents are not validated against the "Secondary Administrative Subdivision"
+      enumeration because the enumeration values are controlled by external organizations and so are
+      subject to change without notice.</li>
+  <li class="addition">SUBMODE element contents are not validated against the "Submode" enumeration because the ADIF
+      field type is "String" (i.e. the enumeration is advisory).</li>
+</ul>
+
+
+<h3 id="ADXSchemasLimitations">II.B. Limitations</h3>
+<ul>
+  <li>MY_STATE and STATE element contents are not validated against the "Primary Administrative Subdivision"
+      enumeration due to the excessively long regular expression required.</li>
+  <li>User-defined field names (contents of the USERDEF element nested in the HEADER element) are not
+      validated against the pre-defined ADIF field names due to the excessively long regular expression
+      required.</li>
+  <li>USERDEF elements nested in the HEADER element can optionally have either a RANGE or ENUM attribute
+      but not both; this is not validated.</li>
+  <li>Values in FIELDNAME attributes belonging to USERDEF elements nested in a RECORD element are not
+      validated against the USERDEF elements in the HEADER element.</li>
+  <li>USERDEF elements nested in RECORD elements do not have their contents validated against the TYPE,
+      RANGE or ENUM (if any) attributes of the corresponding USERDEF element nested in the HEADER element.</li>
+  <li>APP element contents are not validated against the TYPE attribute (if any) given.</li>
+  <li>In a record <span class="addition">or in the header</span>, no field may appear in more than one Data Specifier; this is not validated.</li>
+</ul>
+
+
+<hr>
+<h2 class="addition" id="ADIFImplementationNotes">III. Implementation Notes</h2>
+
+<h3 class="addition" id="ADIFImplementationNotesNumberDataType">III.A. Number Data Type</h3>
+
+<p class="addition">Numbers conforming to the ADIF Number data type are always decimal (base 10).&nbsp;
+Negative numbers are preceded by a minus sign (-).&nbsp;
+However, positive numbers are not preceded by a plus sign (+).&nbsp;
+Leading and trailing zeros are optional.&nbsp;
+A decimal point (.) is optional.</p>
+
+<p class="addition">Using locale-sensitive library routines to read or write ADIF numbers can produce incorrect results.&nbsp;
+For example, a locale may specify that the character representing a decimal point is a comma -
+this is not acceptable in ADIF.</p>
+
+<p class="addition">Examples of valid ADIF Numbers:</p>
+
+<table class="exampletable">
+  <tbody><tr class="addition"><td class="example">0</td></tr>
+  <tr class="addition"><td class="example">-1</td></tr>
+  <tr class="addition"><td class="example">10.37</td></tr>
+  <tr class="addition"><td class="example">.333</td></tr>
+  <tr class="addition"><td class="example">0008.50</td></tr>
+</tbody></table>
+
+<p class="addition">Examples of invalid ADIF Numbers:</p>
+
+<table class="exampletable">
+  <tbody><tr class="addition"><td class="example">+10.37</td><td>(plus sign not allowed)</td></tr>
+  <tr class="addition"><td class="example">0008,50</td><td>(decimal point must be a dot (.))</td></tr>
+  <tr class="addition"><td class="example">1,000,000</td><td>("thousands separator" not allowed)</td></tr>
+  <tr class="addition"><td class="example">10.100.500</td><td>(only one decimal point allowed)</td></tr>
+  <tr class="addition"><td class="example">0x3c</td><td>(only decimal numbers allowed)</td></tr>
+</tbody></table>
+
+<p class="addition">In some Number Data Type fields, although an integer value is typically used,
+the ADIF specification does not restrict the value to integers.</p>
+
+<p class="addition">Examples:</p>
+
+<table class="exampletable">
+  <tbody><tr class="addition"><td class="example">&lt;AGE:4&gt;50.5</td></tr>
+  <tr class="addition"><td class="example">&lt;TX_PWR:3&gt;7.5</td></tr>
+</tbody></table>
+
+<p class="addition">Frequencies in fields are in Megahertz.&nbsp;
+Kilohertz can be represented by digits to the right of a decimal point.</p>
+
+<p class="addition">Examples:</p>
+
+<table class="exampletable">
+  <tbody><tr class="addition"><td class="example">14</td><td>(14 MHz / 14000 kHz)</td></tr>
+  <tr class="addition"><td class="example">10.1005</td><td>(10.1005 MHz / 10100.5 kHz)</td></tr>
+  <tr class="addition"><td class="example">0.472</td><td>(0.472 MHz / 472 kHz)</td></tr>
+</tbody></table>
+
+<p class="addition">Similarly, power levels less than one Watt can be represented by digits to the right of a decimal point.</p>
+
+<p class="addition">Examples:</p>
+
+<table class="exampletable">
+  <tbody><tr class="addition"><td class="example">100</td><td>(100 Watts / 100000 milliwatts)</td></tr>
+  <tr class="addition"><td class="example">7.5</td><td>(7.5 Watts / 7500 milliwatts)</td></tr>
+  <tr class="addition"><td class="example">0.25</td><td>(0.25 Watts / 250 milliwatts)</td></tr>
+</tbody></table>
+
+<h3 class="addition" id="ADIFImplementationNotesADIDataLengthSpecifier">III.B. ADI Data Length Specifier</h3>
+
+<p class="addition">ADI data length specifiers are unsigned decimal (base 10) integers and may have values greater than, or equal to, zero.&nbsp;
+Leading zeros are deprecated: they must not be created when exporting ADI,
+but must be accepted when reading ADI because they were permitted in earlier versions of the ADIF specification.</p>
+
+<p class="addition">Examples of valid data length specifiers:</p>
+
+<table class="exampletable">
+  <tbody><tr class="addition"><td class="example">&lt;COMMENT:0&gt;</td></tr>
+  <tr class="addition"><td class="example">&lt;NOTES:8&gt;TEMP 24C</td></tr>
+</tbody></table>
+
+<p class="addition">Examples of data length specifiers valid <strong><em>only when importing</em></strong>:</p>
+
+<table class="exampletable">
+  <tbody><tr class="addition"><td class="example">&lt;COMMENT:000&gt;</td></tr>
+  <tr class="addition"><td class="example">&lt;NOTES:0008&gt;TEMP 24C</td></tr>
+</tbody></table>
+
+<p class="addition">Examples of invalid data length specifiers:</p>
+
+<table class="exampletable">
+  <tbody><tr class="addition"><td class="example">&lt;NOTES:+8&gt;TEMP 24C</td><td>(plus sign (+) not permitted)</td></tr>
+  <tr class="addition"><td class="example">&lt;STX:3.0&gt;001</td><td>(specifier must be an integer)</td></tr>
+</tbody></table>
+
+
+<h3 class="addition" id="ADIFImplementationNotesMinimumFields">III.C. Minimum Fields</h3>
+
+<p class="addition">The ADIF specification does not specify what fields must be included in
+a record nor does a record necessarily have to represent a QSO.</p>
+
+<p class="addition">The following is a guideline only for a useful minimum set of fields to
+include in a record representing a QSO:</p>
+
+<table class="exampletable">
+  <tbody><tr class="addition"><td class="example">QSO_DATE, TIME_ON, CALL, BAND, MODE</td></tr>
+</tbody></table>
+
+<p class="addition">Importing applications such as
+<a href="http://www.eqsl.cc/qslcard/ADIFContentSpecs.cfm">eQSL.cc</a>,
+<a href="http://www.arrl.org/developer">LoTW</a>
+and
+<a href="http://clublog.freshdesk.com/support/solutions/folders/100474">Club Log</a>
+typically impose additional requirements and
+their documentation should be consulted for details.</p>
+
+<p class="addition">The value in some fields is dependent on the value in another field, and in this case both fields should be included in a record.&nbsp;
+For example, the interpretation of the <span class="example">STATE</span> field value depends on the value in the <span class="example">DXCC</span> field.</p>
+
+
+
+
+</body></html>
